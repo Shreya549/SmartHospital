@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+  <link rel="manifest" href="./images/site.webmanifest">
+  <title>Sign in</title>
+</head>
+
+<body>
+  <nav class="navbar sticky-top navbar-light navbar-expand-lg bg-faded justify-content-center">
+    <a class="navbar-brand" href="/"><img src="./images/favicon.svg" class="logo"></a>
+    <a class="navbar-brand mx-auto" href="/">Let Live MediCare</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/" data-target="#myModal" data-toggle="modal">About</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <form method = post>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patient Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Patient Username" name = "user">
+              <small id="emailHelp" class="form-text text-muted">Don't worry! Your data is safe with us.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" name = "pass" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="col-sm-3">
+              <button type="submit" class="btn btn-primary" formaction = '/Pat_Sign_In'>Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row py-lg-5">
+      <div class="col-lg-4">
+        New Patient?
+        <div class="col-md-5">
+          <form action="">
+            <button formaction="/PatSignUp" class="btn btn-primary">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
