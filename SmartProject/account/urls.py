@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('Doclogin', views.doclogin, name = 'doclogin'),
-    path('Doclogout', views.doclogout, name = 'doclogout')
+    path('Doclogout', views.doclogout, name = 'doclogout'),
+    path('Patlogin', views.patlogin, name = 'patlogin')
 ]

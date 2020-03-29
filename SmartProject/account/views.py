@@ -22,7 +22,6 @@ def doclogin(request):
             return render(request, 'DocHome.html')
         else:
             messages.info(request, "Credentials incorrect")
-            print("Credentials incorrect")
             return redirect('doclogin')
 
     else:
@@ -31,4 +30,24 @@ def doclogin(request):
 def doclogout(request):
     auth.logout(request)
     return redirect('/')
+
+def patlogin(request):
+
+    if(request.method == 'POST'):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password = password)
+        if (user is not None):
+            auth.login(request, user)
+            #redirected to home page
+            return render(request, 'PatHome.html')
+        else:
+            messages.info(request, "Credentials incorrect")
+            print("Credentials incorrect")
+            return redirect('patlogin')
+
+    else:
+        return render(request, 'PatSignIn.html')
+
+
 
