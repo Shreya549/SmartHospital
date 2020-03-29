@@ -7,15 +7,22 @@ from django.contrib import messages
 def doclogin(request):
 
     if(request.method == 'POST'):
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = auth.authenticate(username = username, password = password, is_staff = True )
+        username = User.objects.get(email=email.lower()).username
+        if (username[:2] == 'Dr'):
+            check = True
+        else:
+            check = False
+        if (check):
+            user = auth.authenticate(username=username, password = password)
         if (user is not None):
             auth.login(request, user)
             #redirected to home page
             return render(request, 'DocHome.html')
         else:
             messages.info(request, "Credentials incorrect")
+            print("Credentials incorrect")
             return redirect('doclogin')
 
     else:

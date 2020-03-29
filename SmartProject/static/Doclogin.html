@@ -40,6 +40,7 @@
             <div class="container">
                 <div class="col-lg-6">
                     <form method = post>
+                        {% csrf_token %}
                         <div class="form-group col-md">
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" required id="exampleInputEmail1"
@@ -53,7 +54,7 @@
                                 placeholder="Password" name = "password">
                         </div>
                         <div class="col-sm-4">
-                            <button type="submit" formaction="/DocSignIn"
+                            <button type="submit" formaction="/account/Doclogin"
                                 class="btn btn-primary">Sign in</button>
                         </div>
                     </form>
