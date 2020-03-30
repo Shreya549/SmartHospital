@@ -1,7 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
    <!-- Basic -->
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,34 +12,34 @@
    <meta name="description" content="">
    <meta name="author" content="">
    <!-- Site Icons -->
-   <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
-   <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
    <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
    <!-- Site CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+   <link rel="stylesheet" href="style.css">
    <!-- Colors CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
+   <link rel="stylesheet" href="css/colors.css">
    <!-- ALL VERSION CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/versions.css' %}">
+   <link rel="stylesheet" href="css/versions.css">
    <!-- Responsive CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+   <link rel="stylesheet" href="css/responsive.css">
    <!-- Custom CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+   <link rel="stylesheet" href="css/custom.css">
    <!-- Modernizer for Portfolio -->
-   <script src="{% static 'assets/js/modernizer.js' %}"></script>
+   <script src="js/modernizer.js"></script>
    <!-- [if lt IE 9] -->
    </head>
    <body class="clinic_version">
       <!-- LOADER -->
       <div id="preloader">
-         <img class="preloader" src="{% static 'assets/images/loaders/heart-loading2.gif' %}" alt="">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
       </div>
       <!-- END LOADER -->
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
-               <a class="navbar-brand" href="/"><img src="{% static 'assets/images/logo.png' %}" alt="image"></a>
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
                <div class="right-header">
                   <div class="header-info">
                      
@@ -66,7 +64,7 @@
 				  
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a class="active" href="/">Home</a></li>
+                        <li><a class="active" href="index.html">Home</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
                     
                      </ul>
@@ -79,13 +77,13 @@
 
 
 
-      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
                   <div class="text-contant">
                      <h2>
-                        <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
+                        <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span>
                         <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
                         <span class="wrap"></span>
                         </a>
@@ -105,7 +103,7 @@
                   <div class="service-time one" style="background:#2895f1;">
                      <h2 style="text-align: center; color: #fff;">PATIENT </h2>
                   
-                     <img src="{% static 'assets/images/patient.jpg' %}" alt="" class="img-responsive">
+                     <img src="patient.jpg" alt="" class="img-responsive">
                   </div>
                </div>
             </div>
@@ -113,11 +111,11 @@
                <div class="row">
                   <div class="service-time middle" style="background:#0071d1;">
                      <h1 style="text-align: center; color: #fff;">DOCTOR </h1>
-                    <div>
+                     <div>
                         <br>
                      </div>
                      <div class="time-table-section">
-                        <img src="{% static 'assets/images/doc.jpg' %}" alt="" class="img-responsive">
+                        <img src="doc.jpg" alt="" class="img-responsive">
                      </div>
                   </div>
                </div>
@@ -136,7 +134,7 @@
       <div id="about" class="section wow fadeIn">
          <div class="container">
             <div class="heading">
-               <span class="icon-logo"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#"></span>
+               <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
                <h2>The Specialist Clinic</h2>
             </div>
             <!-- end title -->
@@ -147,15 +145,14 @@
                      <h2>Clinic Service</h2>
                      <p class="lead">that allows to manage all the documents(prescriptions, lab test reports, medicine bills etc) related to a certain patient that can be accessed at any desirable hospital with authorization of the patient.
                         Apart from this, a patient can also search for the availability of any particular medicine in the nearby medical stores.
-                      </p>                        
-                      <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+</p>                         <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
                   </div>
                   <!-- end messagebox -->
                </div>
                <!-- end col -->
                <div class="col-md-6">
                   <div class="post-media wow fadeIn">
-                     <img src="{% static 'assets/images/about_03.jpg' %}" alt="" class="img-responsive">
+                     <img src="images/about_03.jpg" alt="" class="img-responsive">
                     
                   </div>
                   <!-- end media -->
@@ -168,8 +165,8 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="service-widget">
                      <div class="post-media wow fadeIn">
-                        <a href="{% static 'assets/images/clinic_01.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'assets/images/clinic_01.jpg' %}" alt="" class="img-responsive">
+                        <a href="images/clinic_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="images/clinic_01.jpg" alt="" class="img-responsive">
                      </div>
                      <h3>Digital Control Center</h3>
                   </div>
@@ -178,8 +175,8 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="service-widget">
                      <div class="post-media wow fadeIn">
-                        <a href="{% static 'assets/images/clinic_02.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'assets/images/clinic_02.jpg' %}" alt="" class="img-responsive">
+                        <a href="images/clinic_02.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="images/clinic_02.jpg" alt="" class="img-responsive">
                      </div>
                      <h3>Hygienic Operating Room</h3>
                   </div>
@@ -188,8 +185,8 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="service-widget">
                      <div class="post-media wow fadeIn">
-                        <a href="{% static 'assets/images/clinic_03.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'assets/images/clinic_03.jpg' %}" alt="" class="img-responsive">
+                        <a href="images/clinic_03.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="images/clinic_03.jpg" alt="" class="img-responsive">
                      </div>
                      <h3>Specialist Physicians</h3>
                   </div>
@@ -198,8 +195,8 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="service-widget">
                      <div class="post-media wow fadeIn">
-                        <a href="{% static 'assets/images/clinic_01.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                        <img src="{% static 'assets/images/clinic_01.jpg' %}" alt="" class="img-responsive">
+                        <a href="images/clinic_01.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="images/clinic_01.jpg" alt="" class="img-responsive">
                      </div>
                      <h3>Digital Control Center</h3>
                   </div>
@@ -216,9 +213,9 @@
         <div class="container">
 		
 		<div class="heading">
-               <span class="icon-logo"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#"></span>
+               <span class="icon-logo"><img src="images/icon-logo.png" alt="#"></span>
                <h2>The Specialist Clinic</h2>
-    </div>
+            </div>
 
 
 	
@@ -228,7 +225,7 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="logo padding">
-                     <a href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                     <a href=""><img src="images/logo.png" alt=""></a>
                      <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
                   </div>
                </div>
@@ -271,9 +268,9 @@
      
       <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
       <!-- all js files -->
-      <script src="{% static 'assets/js/all.js' %}"></script>
+      <script src="js/all.js"></script>
       <!-- all plugins -->
-      <script src="{% static 'assets/js/custom.js' %}"></script>
+      <script src="js/custom.js"></script>
       <!-- map -->
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
    </body>
