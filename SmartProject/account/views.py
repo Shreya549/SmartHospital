@@ -87,4 +87,6 @@ def patsignup(request):
     else:
         return  render(request,'PatSignUp.html')
     
-
+def patlogout(request):
+    auth.logout(request)
+    return redirect('/')
