@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+    <title>Patient Sign up</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg bg-faded justify-content-center">
+        <a class="navbar-brand" href="/"><img src="./images/favicon.svg" class="logo"></a>
+        <a class="navbar-brand mx-auto" href="/">Let Live MediCare</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/" data-target="#myModal" data-toggle="modal">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 py-sm-1">
+                    <form action="/pat_signup" class="form-group" method = post>
+                        <div name="signup" id="signup">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" required class="form-control" id="name"
+                                    placeholder="Enter Full Name" name = 'name'>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-3 px-sm">
+                                    <label for="age">Age</label>
+                                    <input type="number" name = "age" required class="form-control" id="age" placeholder="Enter Age">
+                                </div>
+                                <div class="form-group col-sm offset-sm-2">
+                                    <label for="gender">Gender</label>
+                                    <br>
+                                    <select name="gender" id="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                Email Address
+                                <input type="email" class="form-control" id="exampleInputEmail1" required
+                                    placeholder="Enter Email Id" name = "email">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">User Name</label>
+                                <input type="text" required class="form-control" id="username"
+                                    placeholder="Enter UserName" name = "username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password" name = "password">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile Number</label>
+                                <input type="text" required class="form-control" id="phone"
+                                    placeholder="Enter Mobile Number" name = "phone">
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-5">
+                                    <label for="blood">Blood group</label>
+                                    <input type="text" required class="form-control" id="blood"
+                                        placeholder="Enter Blood group" name = "blood">
+                                </div>
+
+                                <div class="form-group col-sm-3">
+                                    <label for="height">Height</label>
+                                    <input type="number" required class="form-control" id="height"
+                                        placeholder="Enter height in cms" name = "height">
+                                </div>
+                                <div class="form-group col-sm-3">
+                                    <label for="weight">Weight</label>
+                                    <input type="number" required class="form-control" id="weight"
+                                        placeholder="Enter weight in kgs" name = "weight">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="allergy">Allergies (if any)</label>
+                                <input type="text" required class="form-control" id="allergy"
+                                    placeholder="Enter allergies if any" name = "allergy">
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" onclick="signUp()" class="btn btn-primary">Submit</button>
+                                </button></div>
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+    <title>Store Sign up</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg bg-faded justify-content-center">
+        <a class="navbar-brand" href="/"><img src="./images/favicon.svg" class="logo"></a>
+        <a class="navbar-brand mx-auto" href="/">Let Live MediCare</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/" data-target="#myModal" data-toggle="modal">About</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 py-sm-1">
+                <form class="form-group" method = post>
+                    <div name="signup" id="signup">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" name = "name" required class="form-control" id="name" placeholder="Enter Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="store_name">Store Number</label>
+                            <input type="number" required class="form-control" id="store_name"
+                                placeholder="Enter Store Number" class = "sname">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" required
+                                placeholder="Enter Email Id" name = "email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Mobile Number</label>
+                            <input type="text" required class="form-control" id="phone"
+                                placeholder="Enter Mobile Number" name = "phone">
+                        </div>
+                        <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password" name = "password">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Store Location</label>
+                            <input type="text" required class="form-control" id="address"
+                                placeholder="Enter Store Location" name = "location">
+                        </div>
+                        <div class="col-md-4">
+                            <button formaction="/store_sign_up" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

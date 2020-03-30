@@ -1,0 +1,288 @@
+To create a new app 
+python manage.py startapp <<appnaem>>
+
+In Project urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+path('', include('calc.urls')),
+path('admin/', admin.site.urls)
+]
+
+In Calc urls.py
+
+from django.urls import path
+
+urlspattern = [
+path('', views.home, name = 'home')
+]
+
+In views.py of Calc
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def home(request):
+	return HttpResponse("Hello World")
+
+or 
+ def home(request):
+	 return HttpResponse("<h1>Hello World</h1>")
+_____________________________________________________
+
+TEMPLATE IN DJANGO
+
+DTL
+
+To create a page create in root directory, here outer FirstProj
+
+create home.html inside a new folder say Templates
+
+<h1>Hello World!!</h1>
+______________________
+
+Change setting files
+
+setting.py
+
+TEMPLATES = [
+{
+	'DIRS': [os.path.join(BASE_DIR, '<<folder containing static filess --templates>>')
+
+_____
+Go to views.py
+
+return render(request, 'home.html')
+
+___
+For dynamic content 
+
+return render(request, 'home.html', {'name':'Navin'})
+
+In home.html
+<h1>Hello {{name}}</h1>
+
+Create another file, base.html, common to all pages
+
+//Jinja format 
+{% block content %}
+
+
+
+{% endblock %}
+
+In hello.html
+{% extends 'base.html' %}
+{% block content %}
+<h1> Hello {{name}} </h1>
+{% endcontent %}
+
+________________________________________
+
+To add two numbers
+ >>> Create a form
+ >>> <form action = "add">
+ >>> <input type = 'submit>
+--------------------
+Create a page result.html
+>>>> Reuse the design of the page 
+{% extends 'base.html' %}
+{% block content %}
+ 
+{% endblock %}
+----------------
+In calc urls.py
+
+from django.urls import path
+
+urlspattern = [
+path('', views.home, name = 'home'),
+path('add', views.add , name = 'add')
+]
+
+-----
+In views.py of Calc
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def home(request):
+	return render(request, 'home.html')
+
+def add (request):
+	//Fetching the values
+	val1 = int(request.GET["<<name(num1)">>])
+	val2 = int(request.GET["<<name(num2)">>])
+	res = val1 + val2
+	return render(request, 'result.html', {'result' : res})
+
+------------
+In result.html
+
+{{result}}
+
+_______________________________________
+
+POST : Adding data to the server
+GET : Fetching data from the server
+
+To use post, in home.html
+
+{% csnf %}
+
+_______________________________________
+MODEL VIEW TEMPLATE
+
+Model - Data
+Template - Django Template Language
+View - Connects both Model and Template
+
+
+---------------
+
+Model - Model
+View - Controller
+Template - View
+
+___________________________________________________________
+
+
+Create a static folder in Project file
+
+Copy Paste all your JS, Css files
+
+Go to settings.py 
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+----------------------------
+Go to all html files
+At the beginning of the file:
+{% load static %}
+change all links to "{% static '////link////' %}"
+href = "{% static '/link/' %}
+
+------------------------------
+
+In models.py
+
+from django.db import models
+
+class Destination:
+	id : int
+	name : str
+	img : str
+	desc : str
+	price : int
+
+------------------------------
+In views.py
+
+from .models import Destination
+def index(request):
+	dest1 = Destination()
+	dest1.name = "Mumbai"
+	dest1.desc = 'The city that never sleeps'
+	dest1.img = 'name_of_img.jpg'
+
+	dests = [dest1, dest2, dest3]
+	return render(request, "index.html", {'dest' : dests})
+
+------------------------------
+In index.html
+Change {{}}
+
+To run a loop
+
+{% for dest in dests %}
+////
+////
+////
+////
+{% endfor %}
+
+To add images:
+{% static "images" as baseUrl %}
+
+Now,
+	<img src = "{{baseUrl}}/{{dest.img}}"
+
+_________________________________________________________________________--
+
+IF STATEMENT:
+In html:
+
+{% if dest.offer %}  
+\\\\\\\\\\\ Code to be executed if condition is true\\\\\\\\\\\\\\\\\\\\\\\
+{% endif %}
+
+
+______________________________________________________-
+PASSING MESSAGES IN DJANGO
+
+In views.py
+
+from django.contrib import messages
+
+if (-----):
+	messages.info(request, 'Email taken', {'msgs' : 'Email taken'})
+
+Add Jinja code to html too
+
+____________________________________________-
+
+1. Make changes in the settings.py
+
+2. Install pip install psycopg2--- connector
+
+3. Change models.py
+Google django models field
+
+4. Add migrations
+In settings.py 
+INSTALLED_APPS = [
+    'ShoppingApp.apps.ShoppingAppConfig',
+	------
+
+python manage.py migrate
+python manage.py make migrations
+___________________________________________
+
+python manage.py createsuperuser
+
+-----------------
+Go to admin.py
+Register your models there
+
+---------------------
+To add and fetch media
+
+Add in urls.py of Project
+from django.conf import settings
+from django.conf.urls.static import static
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+In setting.py 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['user_name']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        #password2 = request.POST['password2']
+
+        user = User.objects.create_user(username = username, password = password1, email = email, first_name = first_name, last_name = last_name )
+        user.save()
+        print('User created')
+        return redirect('/')
