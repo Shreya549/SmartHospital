@@ -79,7 +79,9 @@
 
 
 
-      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('assets/images/slider-bg.png');">
+      <div id="home" class="parallax first-section wow fadeIn" 
+      data-stellar-background-ratio="0.4" 
+      style="background-image:url('{% static "assets/images/slider-bg.png" %}' );>
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
@@ -102,7 +104,7 @@
          <div class="container">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                <div class="row">
-                  <div class="service-time one" style="background:#2895f1;">
+                  <div class="service-time one" style ="background:#2895f1;">
                      <h2 style="text-align: center; color: #fff;">PATIENT </h2>
                   
                      <img src="{% static 'assets/images/patient.jpg' %}" alt="" class="img-responsive">
@@ -127,7 +129,7 @@
                   <div class="service-time three" style="background:#0060b1;">
                      
                      <h2 style="text-align: center; color: #fff;">PHARMACY </h2>
-                     <img src="patient.jpg" alt="" class="img-responsive">
+                     <img src="{% static 'assets/images/patient.jpg' %}" alt="" class="img-responsive">
                   </div>
                </div>
             </div>
