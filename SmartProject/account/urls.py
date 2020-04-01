@@ -6,5 +6,6 @@ urlpatterns = [
     path('Doclogout', views.doclogout, name = 'doclogout'),
     path('Patlogin', views.patlogin, name = 'patlogin'),
     path('PatSignup', views.patsignup, name = 'patsignup'),
-    path('Patlogout', views.patlogout, name = 'patlogout')
+    path('Patlogout', views.patlogout, name = 'patlogout'),
+    path('Storelogin', views.storelogin, name = 'storelogin')
 ]

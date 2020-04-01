@@ -90,3 +90,5 @@ def patsignup(request):
 def patlogout(request):
     auth.logout(request)
     return redirect('/')
+
+def storelogin(request):
