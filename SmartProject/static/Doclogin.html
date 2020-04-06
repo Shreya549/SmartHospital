@@ -83,14 +83,14 @@
 
 
 
-      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('{% static "assets/images/slider-bg.png" %}' );">
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
                 
                 <h2>
                   <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
-                  <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care For Your Health", "We are Experts!" ]'>
+                  <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "Login to continue!", "We are Experts!" ]'>
                   <span class="wrap"></span>
                   </a>
                 </h2>
@@ -99,9 +99,6 @@
                     <div class="wrap-login100">
                       <form class="login100-form validate-form" method = 'post'>
                         {% csrf_token %}
-                        <span class="login100-form-title p-b-34 p-t-27">
-                         Hello Doctor, please login
-                        </span>
               
                         <div class="wrap-input100 validate-input" data-validate = "Enter username">
                           <input class="input100" type="text" name="username" placeholder="Username">
@@ -113,12 +110,7 @@
                           <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
               
-                        <div class="contact100-form-checkbox">
-                          <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                          <label class="label-checkbox100" for="ckb1">
-                            Remember me
-                          </label>
-                        </div>
+                        <div></div>
               
                         <div class="container-login100-form-btn">
                           <button class="login100-form-btn" formaction = '/account/Doclogin'>
