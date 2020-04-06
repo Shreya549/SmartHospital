@@ -1,13 +1,12 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctor Log-In</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
  
-  <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="js/main.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <!-- Site Metas -->
@@ -16,36 +15,36 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Site Icons -->
-  <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+  <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main2.css' %}">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
   <!-- Site CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="style.css">
   <!-- Colors CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
+  <link rel="stylesheet" href="css/colors.css">
   <!-- ALL VERSION CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/versions.css' %}">
+  <link rel="stylesheet" href="css/versions.css">
   <!-- Responsive CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+  <link rel="stylesheet" href="css/responsive.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <link rel="stylesheet" href="css/custom.css">
   <!-- Modernizer for Portfolio -->
-  <script src="{% static 'assets/js/modernizer.js' %}"></script>
+  <script src="js/modernizer.js"></script>
 </head>
 <body>
   
  <body class="clinic_version">
       <!-- LOADER -->
       <div id="preloader">
-         <img class="preloader" src="{% static 'assets/images/loaders/heart-loading2.gif' %}" alt="">
+         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
       </div>
       <!-- END LOADER -->
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
-               <a class="navbar-brand" href="/"><img src="{% static 'assets/images/logo.png' %}" alt="image"></a>
+               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
                <div class="right-header">
                   <div class="header-info">
                      
@@ -70,7 +69,7 @@
 				  
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a class="active" href="/">Home</a></li>
+                        <li><a class="active" href="index.html">Home</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
                     
                      </ul>
@@ -89,18 +88,18 @@
                <div class="col-md-12 col-sm-12">
                 
                 <h2>
-                  <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
-                  <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care For Your Health", "We are Experts!" ]'>
+                  <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span>
+                  <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
                   <span class="wrap"></span>
                   </a>
                 </h2>
                 <div class="limiter">
                   <div class="container-login100" >
                     <div class="wrap-login100">
-                      <form class="login100-form validate-form" method = 'post'>
-                        {% csrf_token %}
+                      <form class="login100-form validate-form">
+                    
                         <span class="login100-form-title p-b-34 p-t-27">
-                         Hello Doctor, please login
+                         Patient Log in
                         </span>
               
                         <div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -109,7 +108,7 @@
                         </div>
               
                         <div class="wrap-input100 validate-input" data-validate="Enter password">
-                          <input class="input100" type="password" name="password" placeholder="Password">
+                          <input class="input100" type="password" name="pass" placeholder="Password">
                           <span class="focus-input100" data-placeholder="&#xf191;"></span>
                         </div>
               
@@ -121,7 +120,7 @@
                         </div>
               
                         <div class="container-login100-form-btn">
-                          <button class="login100-form-btn" formaction = '/account/Doclogin'>
+                          <button class="login100-form-btn">
                             Login
                           </button>
                         </div>
@@ -135,7 +134,10 @@
                     </div>
                   </div>
                 </div>
-            </div>
+                
+              
+
+</div>
 
                </div>
             </div>
@@ -149,7 +151,7 @@
            <div class="row">
               <div class="col-md-4">
                  <div class="logo padding">
-                    <a href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                    <a href=""><img src="images/logo.png" alt=""></a>
                     <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
                  </div>
               </div>
@@ -192,9 +194,9 @@
     
      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
      <!-- all js files -->
-     <script src="{% static 'assets/js/all.js' %}"></script>
+     <script src="js/all.js"></script>
      <!-- all plugins -->
-     <script src="{% static 'assets/js/custom.js' %}"></script>
+     <script src="js/custom.js"></script>
      <!-- map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
   </body>

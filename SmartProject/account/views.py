@@ -92,3 +92,4 @@ def patlogout(request):
     return redirect('/')
 
 def storelogin(request):
+    return redirect('/')
