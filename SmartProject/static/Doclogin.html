@@ -125,13 +125,19 @@
                             Login
                           </button>
                         </div>
+
+                        <div class="wrap-input100 validate-input">
+                           {% for msg in messages %}
+                           <h5>{{msg}}</h5>
+                           {% endfor %}
+                         </div>
               
                         <div class="text-center p-t-90">
                           <a class="txt1" href="#">
                             Forgot Password?
                           </a>
                         </div>
-                      </form>
+                     </form>
                     </div>
                   </div>
                 </div>
@@ -143,7 +149,10 @@
          </div>
          <!-- end container -->
       </div>
-  
+
+
+
+
       <footer id="footer" class="footer-area wow fadeIn">
         <div class="container">
            <div class="row">
