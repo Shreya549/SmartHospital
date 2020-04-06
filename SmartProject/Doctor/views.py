@@ -4,4 +4,4 @@ from django.contrib.auth.models import User, auth
 # Create your views here.
 
 def Home(request):
-    return redirect('/account/Doclogin')
+    return render(request, 'DocHome.html')

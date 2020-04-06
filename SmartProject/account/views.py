@@ -30,7 +30,7 @@ def doclogin(request):
     else:
         return render(request, 'Doclogin.html')
 
-def doclogout(request):
+def logout(request):
     auth.logout(request)
     return redirect('/')
 
@@ -90,7 +90,7 @@ def patsignup(request):
     else:
         return  render(request,'PatSignUp.html')
     
-def patlogout(request):
+def logout(request):
     auth.logout(request)
     return redirect('/')
 
