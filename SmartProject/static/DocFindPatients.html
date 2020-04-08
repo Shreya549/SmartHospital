@@ -66,7 +66,7 @@
 				  
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a data-scroll href = '/Doctor/Home'>Hello, Dr. {{user.first_name}}</a></li>
+                        <li><a data-scroll href = '/Doctor'>Hello, Dr. {{user.first_name}}</a></li>
                         <li><a data-scroll class = 'active' href = '#'>Treat Patients</a></li>
                         <li><a data-scroll href = '/account/logout'>Logout</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
@@ -101,8 +101,7 @@
                             <button type="submit" formaction = "/Doctor/FindPatients" id="btnsearch" class="btn btn-primary">Search</button>
                         </div>
                     </form>
-                  
-                  </div>
+
                </div>
             </div>
             <!-- end row -->
@@ -110,8 +109,15 @@
          <!-- end container -->
       </div>
 
-	
-    
+
+      <!----------ERROR MESSAGE PRINT-------->
+      <div class="wrap-input100 validate-input">
+         {% for msg in messages %}
+         <h5>{{msg}}</h5>
+         {% endfor %}
+       </div>
+      
+
       <footer id="footer" class="footer-area wow fadeIn">
          <div class="container">
             <div class="row">

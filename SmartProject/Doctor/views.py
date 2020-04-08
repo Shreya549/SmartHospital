@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 from .models import Appointment
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 
 # Create your views here.
 
 def Home(request):
     return render(request, 'DocHome.html')
 
+@login_required
 def FindPatients(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -16,8 +20,15 @@ def FindPatients(request):
         except ObjectDoesNotExist:
             doc_username = None
         if (doc_username is not None):
-            print(User.get_username())
-        return redirect('/')
+            current_doctor = request.user.get_username()
+            if (current_doctor == doc_username):
+                return redirect('/')
+            else:
+               messages.info(request,'Patient not registered under you!')
+               return redirect('/Doctor/FindPatients')
+        else:
+            messages.info(request, 'Patient has no active appointment!')
+            return redirect('/Doctor/FindPatients')
     else:
         return render(request, 'DocFindPatients.html')
     
