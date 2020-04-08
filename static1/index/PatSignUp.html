@@ -1,36 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile Metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- Site Metas -->
-   <title>Life Care </title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- Site Icons -->
-   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
-   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- Site CSS -->
-   <link rel="stylesheet" href="style.css">
-   <!-- Colors CSS -->
-   <link rel="stylesheet" href="css/colors.css">
-   <!-- ALL VERSION CSS -->
-   <link rel="stylesheet" href="css/versions.css">
-   <!-- Responsive CSS -->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/custom.css">
-   <!-- Modernizer for Portfolio -->
-   <script src="js/modernizer.js"></script>
-   <!-- [if lt IE 9] -->
-   </head>
-   <body class="clinic_version">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+ 
+  <script src="js/main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- Site Metas -->
+  <title>Life Care </title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css">
+
+<!--  
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> -->
+ 
+   <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  
+  <!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"> -->
+
+  
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Colors CSS -->
+  <link rel="stylesheet" href="css/colors.css">
+  <!-- ALL VERSION CSS -->
+  <link rel="stylesheet" href="css/versions.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom1.css">
+  <!-- Modernizer for Portfolio -->
+  <script src="js/modernizer.js"></script>
+<script>
+   $(function () {
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i>');
+            }
+        }
+        init();
+    });
+});
+</script>
+<style>
+   .colorgraph
+    {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+ 
+}
+</style>
+
+
+
+</head>
+<body>
+  
+ <body class="clinic_version">
       <!-- LOADER -->
       <div id="preloader">
          <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
@@ -81,23 +176,78 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
-                  <div class="text-contant">
-                     <h2>
-                        <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span>
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
-                        <span class="wrap"></span>
-                        </a>
-                     </h2>
-                  </div>
+
+                  <h2>
+                     <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span>
+                     <a class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
+                   
+                     </a>
+                   </h2>
+                
+                  <div class="container">
+
+                     <div class="row">
+                         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                            <form role="form">
+                              <h2 style="color:rgb(19, 99, 168);">SIGN UP </h2>
+                              <br>
+                              <hr class="colorgraph">
+                              <div class="row">
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                             <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                                    </div>
+                                 </div>
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <input type="text" name="user name" id="user_name" class="form-control input-lg" placeholder="User Name" tabindex="3">
+                              </div>
+                              <div class="form-group">
+                                 <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+                              </div>
+                              <div class="row">
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+                                    </div>
+                                 </div>
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                                    </div>
+                                 </div>
+                              </div>
+                    
+                              
+                              <hr color="green" width=100%>
+                              <div class="row">
+                                 <div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                                 
+                           </form>
+                        </div>
+                     </div>
+                     <!-- Modal -->
+                   
+                           </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                     </div><!-- /.modal -->
+                     </div>
+              
+
+</div>
+
                </div>
             </div>
             <!-- end row -->
          </div>
          <!-- end container -->
-      </div>
-
-	
-    
+     
+  
       <footer id="footer" class="footer-area wow fadeIn">
         <div class="container">
            <div class="row">
