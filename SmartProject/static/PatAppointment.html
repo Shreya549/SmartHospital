@@ -93,15 +93,26 @@
                         {% csrf_token %}
                          <div class="form-group">
                              <label for="search">
-                                 <h1>Book Appointment</h1>
+                                 <h3>Book Appointment</h3>
                              </label>
                              <input type="text" required class="form-control" id="search"
                                  placeholder="Enter doctor username" name = doc_username>
+                              <input type="textbox" required class="form-control" id="search"
+                                 placeholder="Enter problem" name = problem>
                          </div>
+
+                         <!-------ERROR MESSAGE----->
+                        <div class="form-group">
+                           {% for msg in messages %}
+                           <h5>{{msg}}</h5>
+                           {% endfor %}
+                         </div>
+              
                          <div class="col-sm-4">
                              <button type="submit" formaction = "/Patient/BookAppointment" id="btnsearch" class="btn btn-primary">Book</button>
                          </div>
                      </form>
+
 
                   
                   </div>

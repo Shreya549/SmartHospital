@@ -227,7 +227,12 @@
                                     </div>
                                  </div>
                               </div>
-                    
+<!-------------------ERROR MESSAGE------------------------------------->
+                              <div class="form-group">
+                                 {% for msg in messages %}
+                                 <h5>{{msg}}</h5>
+                                 {% endfor %}
+                               </div>
                               
                               <hr color="green" width=100%>
                               <div class="row">

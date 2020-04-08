@@ -17,7 +17,19 @@ def BookAppointment(request):
     if request.method == 'POST':
         doc_username = request.POST['doc_username']
         current_patient = request.user.get_username()
-        appointment = Appointment()
-
+        problem = request.POST['problem']
+        
+        if (User.objects.filter(username=doc_username).exists() and doc_username[:2] == 'Dr'):
+            appointment = Appointment(
+            username = current_patient, 
+            doctor_username = doc_username,
+            problem = problem,
+            treated = False
+            )
+            appointment.save()
+            return redirect('/Patient/Home')
+        else:
+            messages.info(request, 'Wrong Doctor Username. Please verify and try again')
+            return redirect('/Patient/BookAppointment')
     else:
         return render(request, 'PatAppointment.html')
