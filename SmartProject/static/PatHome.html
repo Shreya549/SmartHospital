@@ -1,63 +1,158 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/style.css' %}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/apple-touch-icon.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
-  <link rel="manifest" href="{% static 'assets/images/site.webmanifest'%}">
-  <title>Home</title>
-</head>
-
-<body>
-  <nav class="navbar sticky-top navbar-light navbar-expand-lg bg-faded justify-content-center">
-    <a class="navbar-brand" href="/"><img src="{% static 'assets/images/favicon.svg' %}" class="logo"></a>
-    <a class="navbar-brand mx-auto" href="/">Let Live MediCare</a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#myModal" data-toggle="modal">Hello, {{user.first_name}} </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/account/Patlogout" data-target="#myModal" data-toggle="modal">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about" data-target="#myModal" data-toggle="modal">About Us</a>
-      </li>
-    </ul>
-  </nav>
-
-  <div class="jumbotron">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <ul class="nav nav-pills flex-column">
-            <li class="nav-item">
-              <a class="nav-link btn active" href="/personal">Personal</a>
-            </li> 
-            <li class="nav-item">
-              <a class="nav-link btn" href="/pat/health">Health</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btn" href="/pat/medicine">Medicine</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link btn" href="/pat/test">Test</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-8">
-
-        </div>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>Life Care </title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Site Icons -->
+      <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Site CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+      <!-- Colors CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
+      <!-- ALL VERSION CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/versions.css' %}">
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+      <!-- Modernizer for Portfolio -->
+      <script src="{% static 'assets/js/modernizer.js' %}"></script>
+      <!-- [if lt IE 9] -->
+      </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="{% static 'assets/images/loaders/heart-loading2.gif' %}" alt="">
       </div>
-    </div>
-  </div>
-</body>
+      <!-- END LOADER -->
+      <header>
+         <div class="header-top wow fadeIn">
+            <div class="container">
+               <a class="navbar-brand" href="/"><img src="{% static 'assets/images/logo.png' %}" alt="image"></a>
+               <div class="right-header">
+                  <div class="header-info">
+                     
+                     <div class="info-inner">
+                        <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                        <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
+                     </div>
+                     <div class="info-inner">
+                        <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                        <span class="iconcont"><a data-scroll href="#">24/7</a></span>	
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="header-bottom wow fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+				  
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a data-scroll class = 'active' href = '/Patient/Home'>Hello, {{user.first_name}}</a></li>
+                        <li><a data-scroll href = '#'>Book Appointment</a></li>
+                        <li><a data-scroll href = '#'>Find Medicines</a></li>
+                        <li><a data-scroll href = '/account/logout'>Logout</a></li>
+                        <li><a data-scroll href="#about">About us</a></li>
+                    
+                     </ul>
+                  </div>
+               </nav>
+           
+            </div>
+         </div>
+      </header>
 
+
+
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 col-sm-12">
+                  <div class="text-contant">
+
+
+
+                  
+                  </div>
+               </div>
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+
+	
+    
+      <footer id="footer" class="footer-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="logo padding">
+                     <a href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                     <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="footer-info padding">
+                     <h3>CONTACT US</h3>
+                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
+                     <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="subcriber-info">
+                     <h3>SUBSCRIBE</h3>
+                     <p>Get healthy news, tip and solutions to your problems from our experts.</p>
+                     <div class="subcriber-box">
+                        <form id="mc-form" class="mc-form">
+                           <div class="newsletter-form">
+                              <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL">
+                              <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button> 
+                              <div class="clearfix"></div>
+                              <!-- mailchimp-alerts Start -->
+                              <div class="mailchimp-alerts">
+                                 <div class="mailchimp-submitting"></div>
+                                 <!-- mailchimp-submitting end -->
+                                 <div class="mailchimp-success"></div>
+                                 <!-- mailchimp-success end -->
+                                 <div class="mailchimp-error"></div>
+                                 <!-- mailchimp-error end -->
+                              </div>
+                              <!-- mailchimp-alerts end -->
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+     
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="{% static 'assets/js/all.js' %}"></script>
+      <!-- all plugins -->
+      <script src="{% static 'assets/js/custom.js' %}"></script>
+      <!-- map -->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+   </body>
 </html>

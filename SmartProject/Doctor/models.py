@@ -9,3 +9,11 @@ class DoctorInfo(models.Model):
     timings = models.TextField()
     img = models.ImageField(upload_to  = 'pics')
     qualif = models.TextField()
+
+
+class Appointment(models.Model):
+    username = models.CharField(max_length = 100)
+    doctor_username = models.CharField(max_length = 100)
+    problem = models.TextField()
+    medicines = models.TextField()
+    treated = models.BooleanField()

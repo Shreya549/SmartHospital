@@ -66,8 +66,8 @@
 				  
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a data-scroll class = 'active' href = '/Doctor/Home'>Hello, Dr. {{user.first_name}}</a></li>
-                        <li><a data-scroll href = '/Doctor/FindPatients'>Treat Patients</a></li>
+                        <li><a data-scroll href = '/Doctor/Home'>Hello, Dr. {{user.first_name}}</a></li>
+                        <li><a data-scroll class = 'active' href = '#'>Treat Patients</a></li>
                         <li><a data-scroll href = '/account/logout'>Logout</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
                     
@@ -87,8 +87,20 @@
                <div class="col-md-12 col-sm-12">
                   <div class="text-contant">
 
-
-
+                    <!----------Find Patients---------------->
+                    <form name="search" id="search" method = post>
+                       {% csrf_token %}
+                        <div class="form-group">
+                            <label for="search">
+                                <h1>Find Patient</h1>
+                            </label>
+                            <input type="text" required class="form-control" id="search"
+                                placeholder="Enter patient username" name = username>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" formaction = "/Doctor/FindPatients" id="btnsearch" class="btn btn-primary">Search</button>
+                        </div>
+                    </form>
                   
                   </div>
                </div>

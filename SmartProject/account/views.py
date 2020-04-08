@@ -19,7 +19,7 @@ def doclogin(request):
             if (user is not None):
                 auth.login(request, user)
             #redirected to home page
-                return redirect('/Doctor/Home')
+                return render(request, 'DocHome.html')
             else:
                 messages.info(request, "Credentials incorrect")
                 return redirect('doclogin')
