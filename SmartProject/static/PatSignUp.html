@@ -1,45 +1,144 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-   <!-- Basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile Metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- Site Metas -->
-   <title>Life Care </title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- Site Icons -->
-   <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
-   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- Site CSS -->
-   <link rel="stylesheet" href="style.css">
-   <!-- Colors CSS -->
-   <link rel="stylesheet" href="css/colors.css">
-   <!-- ALL VERSION CSS -->
-   <link rel="stylesheet" href="css/versions.css">
-   <!-- Responsive CSS -->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/custom.css">
-   <!-- Modernizer for Portfolio -->
-   <script src="js/modernizer.js"></script>
-   <!-- [if lt IE 9] -->
-   </head>
-   <body class="clinic_version">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Patient Log-In</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
+     
+      <script src="{% static 'assets/js/main.js' %}"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>Life Care </title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+<!-- Site Icons -->
+<link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/material-design-iconic-font.min.css' %}">
+
+<!--  
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+   <script type="text/javascript" src="{% static 'assets/js/jquery-1.10.2.min.js' %}"></script>
+  
+  <!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"> -->
+
+  
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <!-- Colors CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
+  <!-- ALL VERSION CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/versions.css' %}">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+  <!-- Modernizer for Portfolio -->
+  <script src="{% static 'assets/js/modernizer.js' %}"></script>
+<script>
+   $(function () {
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i>');
+            }
+        }
+        init();
+    });
+});
+</script>
+<style>
+   .colorgraph
+    {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+ 
+}
+</style>
+
+
+
+</head>
+<body>
+  
+ <body class="clinic_version">
       <!-- LOADER -->
       <div id="preloader">
-         <img class="preloader" src="images/loaders/heart-loading2.gif" alt="">
+         <img class="preloader" src="{% static 'assets/images/loaders/heart-loading2.gif' %}" alt="">
       </div>
       <!-- END LOADER -->
       <header>
          <div class="header-top wow fadeIn">
             <div class="container">
-               <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+               <a class="navbar-brand" href="/"><img src="{% static 'assets/images/logo.png' %}" alt="image"></a>
                <div class="right-header">
                   <div class="header-info">
                      
@@ -64,7 +163,7 @@
 				  
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a class="active" href="/">Home</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
                     
                      </ul>
@@ -77,33 +176,89 @@
 
 
 
-      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('{% static "assets/images/slider-bg.png" %}');">
          <div class="container">
             <div class="row">
                <div class="col-md-12 col-sm-12">
-                  <div class="text-contant">
-                     <h2>
-                        <span class="center"><span class="icon"><img src="images/icon-logo.png" alt="#" /></span></span>
-                        <a href="" class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care Your Health", "We are Expert!" ]'>
-                        <span class="wrap"></span>
-                        </a>
-                     </h2>
-                  </div>
+
+                  <h2>
+                     <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
+                     <a class="typewrite" data-period="2000" data-type='[ "Welcome to Life Care", "We Care For Your Health", "We are Experts!" ]'>
+                   
+                     </a>
+                   </h2>
+                
+                  <div class="container">
+
+                     <div class="row">
+                         <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                            <form method="POST">
+                               {% csrf_token %}
+                              <h2 style="color:rgb(19, 99, 168);">SIGN UP </h2>
+                              <br>
+                              <hr class="colorgraph">
+                              <div class="row">
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name">
+                                    </div>
+                                 </div>
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="form-group">
+                                 <input type="text" name="username" id="user_name" class="form-control input-lg" placeholder="User Name" tabindex="3">
+                              </div>
+                              <div class="form-group">
+                                 <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+                              </div>
+                              <div class="row">
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="password" name="password1" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+                                    </div>
+                                 </div>
+                                 <div class="col-xs-12 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                       <input type="password" name="password2" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                                    </div>
+                                 </div>
+                              </div>
+                    
+                              
+                              <hr color="green" width=100%>
+                              <div class="row">
+                                 <div class="col-xs-12 col-md-6"><input type="submit" formaction = '/account/PatSignup' value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+                                 
+                           </form>
+                        </div>
+                     </div>
+                     <!-- Modal -->
+                   
+                           </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                     </div><!-- /.modal -->
+                     </div>
+              
+
+</div>
+
                </div>
             </div>
             <!-- end row -->
          </div>
          <!-- end container -->
-      </div>
-
-	
-    
+     
+  
       <footer id="footer" class="footer-area wow fadeIn">
         <div class="container">
            <div class="row">
               <div class="col-md-4">
                  <div class="logo padding">
-                    <a href=""><img src="images/logo.png" alt=""></a>
+                    <a href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
                     <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
                  </div>
               </div>
@@ -146,9 +301,9 @@
     
      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
      <!-- all js files -->
-     <script src="js/all.js"></script>
+     <script src="{% static 'assets/js/all.js' %}"></script>
      <!-- all plugins -->
-     <script src="js/custom.js"></script>
+     <script src="{% static 'assets/js/custom.js' %}"></script>
      <!-- map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
   </body>
