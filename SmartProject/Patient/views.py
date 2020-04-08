@@ -17,6 +17,7 @@ def BookAppointment(request):
     if request.method == 'POST':
         doc_username = request.POST['doc_username']
         current_patient = request.user.get_username()
-        
+        appointment = Appointment()
+
     else:
         return render(request, 'PatAppointment.html')
