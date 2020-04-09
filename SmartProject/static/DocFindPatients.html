@@ -13,6 +13,8 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
+      <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
       <!-- Site Icons -->
       <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
       <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
@@ -84,30 +86,40 @@
       <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
          <div class="container">
             <div class="row">
-               <div class="col-md-12 col-sm-12">
-                  <div class="text-contant">
+              
+                  <div class="col-md-12 col-sm-12">
+                     <div class="text-contant">
+                        <h2>
+                           <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
+                       
+                        </h2>
+                    
+                  
 
                     <!----------Find Patients---------------->
-                    <form name="search" id="search" method = post>
+                    <div name="search" id="search" method = post>
                        {% csrf_token %}
+                       <form>
                         <div class="form-group">
                             <label for="search">
-                                <h1>Find Patient</h1>
-                            </label>
+                       <b>       <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 60px;">
+                           Search for Patients </h1>
+</b>                           </label>
                             <input type="text" required class="form-control" id="search"
                                 placeholder="Enter patient username" name = username>
+                      <br>
+                        <button type="submit" class="btn btn-primary btn-lg"  formaction = "/Doctor/FindPatients">SEARCH</button>
+
                         </div>
-                        <div class="col-sm-4">
-                            <button type="submit" formaction = "/Doctor/FindPatients" id="btnsearch" class="btn btn-primary">Search</button>
-                        </div>
+
                     </form>
 
                </div>
             </div>
+         </div>
             <!-- end row -->
          </div>
          <!-- end container -->
-      </div>
 
 
       <!----------ERROR MESSAGE PRINT-------->

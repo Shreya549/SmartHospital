@@ -13,6 +13,8 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
+
+      <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
       <!-- Site Icons -->
       <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
       <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
@@ -87,19 +89,28 @@
             <div class="row">
                <div class="col-md-12 col-sm-12">
                   <div class="text-contant">
-
+                     <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
+                       
                     <!----------Book Appointment---------------->
                     <form name="search" id="search" method = post>
                         {% csrf_token %}
+                        <form>
                          <div class="form-group">
                              <label for="search">
-                                 <h3>Book Appointment</h3>
+                              <h1 style="color: blue; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 60px;">BOOK AN APPOINTMENT</h1>
                              </label>
                              <input type="text" required class="form-control" id="search"
                                  placeholder="Enter doctor username" name = doc_username>
                               <input type="textbox" required class="form-control" id="search"
                                  placeholder="Enter problem" name = problem>
+                             
+                         <br>
+                         <button type="submit" class="btn btn-primary btn-lg"  formaction = "/Doctor/FindPatients">BOOK</button>
+ 
                          </div>
+                        </FORM>
+
+                    
 
                          <!-------ERROR MESSAGE----->
                         <div class="form-group">
@@ -108,20 +119,18 @@
                            {% endfor %}
                          </div>
               
-                         <div class="col-sm-4">
-                             <button type="submit" formaction = "/Patient/BookAppointment" id="btnsearch" class="btn btn-primary">Book</button>
-                         </div>
-                     </form>
+                       
+                        </div>
 
 
                   
-                  </div>
+                  
                </div>
             </div>
             <!-- end row -->
-         </div>
+       
          <!-- end container -->
-      </div>
+     
 
 	
     
