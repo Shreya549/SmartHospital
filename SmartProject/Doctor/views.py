@@ -22,7 +22,7 @@ def FindPatients(request):
         if (doc_username is not None):
             current_doctor = request.user.get_username()
             if (current_doctor == doc_username):
-                return redirect('/')
+                return redirect('/Doctor/TreatPatient')
             else:
                messages.info(request,'Patient not registered under you!')
                return redirect('/Doctor/FindPatients')
@@ -31,4 +31,8 @@ def FindPatients(request):
             return redirect('/Doctor/FindPatients')
     else:
         return render(request, 'DocFindPatients.html')
+
+@login_required
+def TreatPatient(request):
+    return render(request, 'Doctreatpatient.html')
     

@@ -97,9 +97,10 @@
                   
 
                     <!----------Find Patients---------------->
-                    <div name="search" id="search" method = post>
-                       {% csrf_token %}
-                       <form>
+                    <div name="search" id="search">
+                       
+                       <form method = "post">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="search">
                        <b>       <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 60px;">
