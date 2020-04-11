@@ -75,15 +75,15 @@ def PreviousReports(request):
         for i in doctor:
             doc.append(i["doctor_username"])
         for i in problem:
-            doc.append(i["problem"])
+            prob.append(i["problem"])
         for i in remark:
-            doc.append(i["remark"])
+            rem.append(i["remark"])
         for i in medicines:
-            doc.append(i["medicines"])
-        for i in range (len(doc)-1, -1):
+            med.append(i["medicines"])
+            
+        for i in range (len(doc)):
             entry = (doc[i], prob[i], rem[i], med[i])
             comp_report.append(entry)
-            print(entry)
         return render(request, 'PatPrevReports.html', {"prev_reports" : comp_report})
         
     except ObjectDoesNotExist:
