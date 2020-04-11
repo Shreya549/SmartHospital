@@ -70,6 +70,8 @@
                      <ul class="nav navbar-nav">
                         <li><a data-scroll href = '/Patient/Home'>Hello, {{user.first_name}}</a></li>
                         <li><a data-scroll  class = 'active' href = '/Patient/BookAppointment'>Book Appointment</a></li>
+                        <li><a data-scroll href = '/Patient/PendingAppointments'>Pending Appointments</a></li>
+                        <li><a data-scroll href = '/Patient/PreviousReports'>Previous Reports</a></li>
                         <li><a data-scroll href = '#'>Find Medicines</a></li>
                         <li><a data-scroll href = '/account/logout'>Logout</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
@@ -105,7 +107,7 @@
                                  placeholder="Enter problem" name = problem>
                              
                          <br>
-                         <button type="submit" class="btn btn-primary btn-lg"  formaction = "/Doctor/FindPatients">BOOK</button>
+                         <button type="submit" class="btn btn-primary btn-lg"  formaction = "/Patient/BookAppointment">BOOK</button>
  
                          </div>
                         </FORM>

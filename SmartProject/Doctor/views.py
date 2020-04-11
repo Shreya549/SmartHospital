@@ -48,12 +48,13 @@ def TreatPatient(request):
     if request.method == 'POST':
         remark = request.POST["remark"]
         medicine = request.POST["medicine"]
-        entry = Appointment.objects.get(username = username, treated = False)
-        entry.remark = remark
-        entry.medicines = medicine
-        entry.treated = True
-        entry.save()
+        entry = Appointment.objects.filter(username = username, treated = False)
+        for i in entry:
+            i.remark = remark
+            i.medicines = medicine
+            i.treated = True
+            i.save()
 
-        return render (request, 'Doctreatpatient.html')
+        return redirect('/Doctor/FindPatients')
     return render(request, 'Doctreatpatient.html', {'name': username, 'problem': probs})
     
