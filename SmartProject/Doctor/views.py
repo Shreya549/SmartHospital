@@ -19,7 +19,7 @@ def FindPatients(request):
         try: 
             active_appoint = Appointment.objects.filter(username = username, treated = False).values('doctor_username')
         except ObjectDoesNotExist:
-            active_appointment = None
+            active_appoint = None
 
         if (active_appoint is not None):
             global current_doctor
