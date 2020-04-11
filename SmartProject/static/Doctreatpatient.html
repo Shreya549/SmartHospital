@@ -2,26 +2,28 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-         <!-- Basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile Metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- Site Metas -->
-   <title>Life Care </title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- Site Icons -->
-   <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
-   <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
-   <!-- Bootstrap CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-   <!-- Site CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-   <!-- Colors CSS -->
-   <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
+      <!-- Basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- Site Metas -->
+      <title>Life Care </title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+      <!-- Site Icons -->
+      <link rel="shortcut icon" href="{% static 'assets/images/fevicon.ico.png' %}" type="image/x-icon" />
+      <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Site CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+      <!-- Colors CSS -->
+      <link rel="stylesheet" href="{% static 'assets/css/colors.css' %}">
       <!-- ALL VERSION CSS -->
       <link rel="stylesheet" href="{% static 'assets/css/versions.css' %}">
       <!-- Responsive CSS -->
@@ -34,7 +36,9 @@
       </head>
    <body class="clinic_version">
       <!-- LOADER -->
-      
+      <div id="preloader">
+         <img class="preloader" src="{% static 'assets/images/loaders/heart-loading2.gif' %}" alt="">
+      </div>
       <!-- END LOADER -->
       <header>
          <div class="header-top wow fadeIn">
@@ -86,56 +90,58 @@
                   <div class="text-contant">
                      
                         <span class="center"><span class="icon"><img src="{% static 'assets/images/icon-logo.png' %}" alt="#" /></span></span>
-                           <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
-                              Problem of patient </h1>
-                           <div class="table-responsive-md" class="center">
-                              <table class="table table-striped" style="font-size: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                              <thead>
+                  <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
+                   Problem of patient </h1>
+                   <div class="table-responsive-md" class="center">
+                      <table class="table table-striped" style="font-size: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                        <thead>
                           <tr>
                             
                             <th scope="col">PATIENT NAME</th>
                             <th scope="col">PROBLEM</th>
                            
+                           
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td scope="row"></td>
-                            <td>   </td>
+                          
+                          
+                            <tD scope="col">TISHU</th>
+                            <tD scope="col">COMMON FLU</th>
                         
                           </tr>
                          
                         </tbody>
-                              </table>
-                           </div>
+                      </table>
                   </div>
+</div>
                   <div style="height:20px; "></div>
 
-                  <div class="row" style="display: flex;">
-                     <form method = post>
-                     <div class="column" style="background-color:#157FDA;flex: 40%;
-                  padding: 10px;
-                  height: 300px; ">
-                  <div class="form-group">
+          <div class="row" style="display: flex;">
+  <div class="column" style="background-color:#157FDA;flex: 40%;
+  padding: 10px;
+  height: 300px; ">
+    <div class="form-group">
       <label class="center"><font style=" font-size:25px; font-family:Calibri; color:white;" >Remarks</label></font>
       <textarea class="form-control" rows="7"></textarea>
     </div>
-                     </div>
-                     <div class="column" style="background-color:#39B49B; flex: 40%;
+  </div>
+  <div class="column" style="background-color:#39B49B; flex: 40%;
   padding: 10px;
   height: 300px;">
   <div class="form-group">
       <label class="center"><font style=" font-size:25px; font-family:Calibri; color:white;" >Medicine </label></font>
       <textarea class="form-control" rows="7"></textarea>
     </div>
-                     </div>
-                     </form>
+  </div>
+  </div>
+</div>
+                
+                   </div>
+                    
                   </div>
                </div>
-            </div>
-                    
-         </div>
-      </div>
             </div>
             <!-- end row -->
          </div>
@@ -144,58 +150,58 @@
 
 	</div>
     
-      <footer id="footer" class="footer-area wow fadeIn">
-        <div class="container">
-           <div class="row">
-              <div class="col-md-4">
-                 <div class="logo padding">
-                    <a href=""><img src="images/logo.png" alt=""></a>
-                    <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="footer-info padding">
-                    <h3>CONTACT US</h3>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
-                    <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="subcriber-info">
-                    <h3>SUBSCRIBE</h3>
-                    <p>Get healthy news, tip and solutions to your problems from our experts.</p>
-                    <div class="subcriber-box">
-                       <form id="mc-form" class="mc-form">
-                          <div class="newsletter-form">
-                             <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL">
-                             <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button> 
-                             <div class="clearfix"></div>
-                             <!-- mailchimp-alerts Start -->
-                             <div class="mailchimp-alerts">
-                                <div class="mailchimp-submitting"></div>
-                                <!-- mailchimp-submitting end -->
-                                <div class="mailchimp-success"></div>
-                                <!-- mailchimp-success end -->
-                                <div class="mailchimp-error"></div>
-                                <!-- mailchimp-error end -->
-                             </div>
-                             <!-- mailchimp-alerts end -->
-                          </div>
-                       </form>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </footer>
-    
-     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-     <!-- all js files -->
-     <script src="js/all.js"></script>
-     <!-- all plugins -->
-     <script src="js/custom.js"></script>
-     <!-- map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
-  </body>
+   <footer id="footer" class="footer-area wow fadeIn">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="logo padding">
+                  <a href=""><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+                  <p>Locavore pork belly scen ester pine est chill wave microdosing pop uple itarian cliche artisan.</p>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="footer-info padding">
+                  <h3>CONTACT US</h3>
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
+                  <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
+                  <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="subcriber-info">
+                  <h3>SUBSCRIBE</h3>
+                  <p>Get healthy news, tip and solutions to your problems from our experts.</p>
+                  <div class="subcriber-box">
+                     <form id="mc-form" class="mc-form">
+                        <div class="newsletter-form">
+                           <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL">
+                           <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button> 
+                           <div class="clearfix"></div>
+                           <!-- mailchimp-alerts Start -->
+                           <div class="mailchimp-alerts">
+                              <div class="mailchimp-submitting"></div>
+                              <!-- mailchimp-submitting end -->
+                              <div class="mailchimp-success"></div>
+                              <!-- mailchimp-success end -->
+                              <div class="mailchimp-error"></div>
+                              <!-- mailchimp-error end -->
+                           </div>
+                           <!-- mailchimp-alerts end -->
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+  
+   <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+   <!-- all js files -->
+   <script src="{% static 'assets/js/all.js' %}"></script>
+   <!-- all plugins -->
+   <script src="{% static 'assets/js/custom.js' %}"></script>
+   <!-- map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+</body>
 </html>
