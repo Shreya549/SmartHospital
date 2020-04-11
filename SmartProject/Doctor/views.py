@@ -34,5 +34,7 @@ def FindPatients(request):
 
 @login_required
 def TreatPatient(request):
+    if request.method == 'POST':
+        return render (request, 'Doctreatpatient.html')
     return render(request, 'Doctreatpatient.html')
     
