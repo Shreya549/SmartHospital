@@ -15,5 +15,6 @@ class Appointment(models.Model):
     username = models.CharField(max_length = 100)
     doctor_username = models.CharField(max_length = 100)
     problem = models.TextField()
+    remark = models.TextField()
     medicines = models.TextField()
     treated = models.BooleanField()

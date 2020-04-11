@@ -14,14 +14,21 @@ def Home(request):
 @login_required
 def FindPatients(request):
     if request.method == 'POST':
+        global username
         username = request.POST['username']
         try: 
-            doc_username = Appointment.objects.get(username = username, treated = False).doctor_username
+            active_appoint = Appointment.objects.filter(username = username, treated = False).values('doctor_username')
         except ObjectDoesNotExist:
-            doc_username = None
-        if (doc_username is not None):
+            active_appointment = None
+
+        if (active_appoint is not None):
+            global current_doctor
             current_doctor = request.user.get_username()
-            if (current_doctor == doc_username):
+            doctor_found = False
+            for i in active_appoint:
+                if (i['doctor_username'] == current_doctor):
+                    doctor_found = True
+            if (doctor_found):
                 return redirect('/Doctor/TreatPatient')
             else:
                messages.info(request,'Patient not registered under you!')
@@ -34,7 +41,19 @@ def FindPatients(request):
 
 @login_required
 def TreatPatient(request):
+    problem = Appointment.objects.filter(username = username, treated = False, doctor_username = current_doctor ).values('problem')
+    probs = []
+    for i in problem:
+        probs.append(i['problem'])
     if request.method == 'POST':
+        remark = request.POST["remark"]
+        medicine = request.POST["medicine"]
+        entry = Appointment.objects.get(username = username, treated = False)
+        entry.remark = remark
+        entry.medicines = medicine
+        entry.treated = True
+        entry.save()
+
         return render (request, 'Doctreatpatient.html')
-    return render(request, 'Doctreatpatient.html')
+    return render(request, 'Doctreatpatient.html', {'name': username, 'problem': probs})
     
