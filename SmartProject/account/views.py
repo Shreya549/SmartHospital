@@ -114,7 +114,7 @@ def storesignup(request):
             cond2 = True
         
         if (cond1 or cond2):
-            return  render(request,'PatSignUp.html')
+            return  render(request,'StoreSignUp.html')
 
         else:
             user = User.objects.create_user(
@@ -131,3 +131,20 @@ def storesignup(request):
         
     else:
         return  render(request,'StoreSignUp.html')
+
+def storelogin(request):
+    if(request.method == 'POST'):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(username=username, password = password)
+        if (user is not None):
+            auth.login(request, user)
+            #redirected to home page
+            return redirect('/Store/Home')
+        else:
+            messages.info(request, "Credentials incorrect")
+            print("Credentials incorrect")
+            return redirect('Storelogin')
+
+    else:
+        return render(request, 'Storelogin.html')
