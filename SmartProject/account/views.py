@@ -94,5 +94,40 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-def storelogin(request):
-    return redirect('/')
+def storesignup(request):
+    if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        cond1 = cond2 = False
+        if User.objects.filter(username=username).exists():
+                messages.info(request, 'Username taken')
+                print('Username exists')
+                cond1 = True
+        
+        if (password1!=password2):
+            messages.info(request, 'Password not matching')
+            print('Password not matching')
+            cond2 = True
+        
+        if (cond1 or cond2):
+            return  render(request,'PatSignUp.html')
+
+        else:
+            user = User.objects.create_user(
+                username = username, 
+                password = password1, 
+                email = email, 
+                first_name = first_name, 
+                last_name = last_name
+            )
+            user.save()
+            print('User created')
+            return redirect('/account/Storelogin')
+        
+        
+    else:
+        return  render(request,'StoreSignUp.html')
