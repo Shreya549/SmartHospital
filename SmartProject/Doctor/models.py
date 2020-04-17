@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -18,3 +19,5 @@ class Appointment(models.Model):
     remark = models.TextField()
     medicines = models.TextField()
     treated = models.BooleanField()
+    date_booked = models.DateField(default = datetime.date.today)
+    date_treated = models.DateField(default = datetime.date.today)

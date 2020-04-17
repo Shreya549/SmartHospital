@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Appointment
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
+from datetime import datetime
 
 # Create your views here.
 
@@ -46,13 +47,14 @@ def TreatPatient(request):
     for i in problem:
         probs.append(i['problem'])
     if request.method == 'POST':
-        remark = request.POST["remark"]
+        remark = (request.POST["remark"])
         medicine = request.POST["medicine"]
         entry = Appointment.objects.filter(username = username, treated = False)
         for i in entry:
             i.remark = remark
             i.medicines = medicine
             i.treated = True
+            i.date_treated = datetime.today().strftime('%Y-%m-%d')
             i.save()
 
         return redirect('/Doctor/FindPatients')
