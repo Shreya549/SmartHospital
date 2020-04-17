@@ -89,14 +89,17 @@
                <div class="col-md-12 col-sm-12">
               
                   <div class="text-contant">
-                     <span class="center">
-                        <span class="icon">
-                           <img src="{% static 'assets/images/icon-logo.png' %}" alt="#" />
-                        </span>
-                     </span>
+                     {% if num_of_reports == 0 %}
+                     <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
+                        No Pending Appointments
+                        </h1>
+                     {% endif %}
+
+                     {% if num_of_reports > 0 %}
                      <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
                      Pending Appointments
                      </h1>
+
                      <div class="table-responsive">
                         <table class="table table-striped" style="font-size: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                           <thead>
@@ -108,28 +111,21 @@
                             </tr>
                           </thead>
                           <tbody>
+
+                           {% for appointments in pending_appoints%}
                             <tr>
-                              <th scope="row">1</th>
-                              <td>Cell</td>
-                            
-                       
+                              {% for i in appointments %}
+                              <td>{{i}}</td>
+                              {% endfor %}
+                              
                             </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Cell</td>
-                       
-                        
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td scope="row">3</td>
-                      
-                        
-                           
-                            </tr>
+                            {% endfor %}
                           </tbody>
                         </table>
-                      </div>   </div>
+                      </div>  
+                      
+                      {% endif %}
+                     </div>
                   </div> 
 
                   

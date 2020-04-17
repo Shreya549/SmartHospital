@@ -43,16 +43,20 @@ def PendingAppointments(request):
         appoint = []
         entry = ()
         doct = []
+        num = 0
         for i in doctor:
             doct.append(i['doctor_username'])
+        
         prob = []
         for i in problem:
             prob.append(i['problem'])
-        for i in range (len(doct), -1):
+        
+        for i in range (len(doct)):
             entry = (doct[i], prob[i])
             appoint.append(entry)
-            print(entry)
-        return render(request, 'PatPendAppoint.html', {"pending_appoints" : appoint})
+
+        num = len(doct)
+        return render(request, 'PatPendAppoint.html', {"pending_appoints" : appoint, "num_of_reports" : num})
         
     except ObjectDoesNotExist:
         messages.info(request, "You do not have any pending appointments")
