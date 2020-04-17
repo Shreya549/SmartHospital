@@ -89,11 +89,12 @@
                <div class="col-md-12 col-sm-12">
               
                   <div class="text-contant">
-                     <span class="center">
-                        <span class="icon">
-                           <img src="{% static 'assets/images/icon-logo.png' %}" alt="#" />
-                        </span>
-                     </span>
+                     {% if number == 0 %}
+                     <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
+                        No Previous Reports
+                        </h1>
+                     {% endif %}
+                     {% if number != 0 %}
                      <h1 style="color: blue;font-family: 'Neucha', cursive; font-size: 40px;">
                      Previous Reports
                      </h1>
@@ -108,34 +109,19 @@
                             </tr>
                           </thead>
                           <tbody>
+                             {% for report in prev_reports %}
                             <tr>
-                              <th scope="row">1</th>
-                              <td>Cell</td>
-                              <td>Cell</td>
-                              <td>Cell</td>
-                            
-                       
+                               {% for i in report %}
+                              <td scope="row">{{i}}</td>
+                              {% endfor %}
                             </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Cell</td>
-                              <td>Cell</td>
-                              <td>Cell</td>
-                       
-                        
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td >3</td>
-                              <td>Cell</td>
-                              <td>Cell</td>
-                      
-                        
-                           
-                            </tr>
+                            {% endfor%}
                           </tbody>
                         </table>
-                      </div>   </div>
+                      </div> 
+                      {% endif%}
+
+                  </div>
                   </div> 
 
                   

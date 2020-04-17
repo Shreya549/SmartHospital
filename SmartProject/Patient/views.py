@@ -84,11 +84,13 @@ def PreviousReports(request):
             rem.append(i["remark"])
         for i in medicines:
             med.append(i["medicines"])
-            
-        for i in range (len(doc)):
+        
+        num = len(prob)
+
+        for i in range (len(doc)-1, -1, -1):
             entry = (doc[i], prob[i], rem[i], med[i])
             comp_report.append(entry)
-        return render(request, 'PatPrevReports.html', {"prev_reports" : comp_report})
+        return render(request, 'PatPrevReports.html', {"prev_reports" : comp_report, 'number' : num})
         
     except ObjectDoesNotExist:
         print("Helo")
