@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- Site Metas -->
-      <title>Life Care </title>
+      <title>Previous Medical Records</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -65,13 +65,12 @@
                   </div>
 				  
                   <div id="navbar" class="navbar-collapse collapse">
-                     <ul class="nav navbar-nav">
-                        <li><a data-scroll  href = '/Patient/Home'>Hello, {{user.first_name}}</a></li>
-                        <li><a data-scroll href = '/Patient/BookAppointment'>Book Appointment</a></li>
-                        <li><a data-scroll href = '/Patient/PendingAppointments'>Pending Appointments</a></li>
-                        <li><a data-scroll  class = 'active' href = '/Patient/PreviousReports'>Previous Reports</a></li>
-                        <li><a data-scroll href = '#'>Find Medicines</a></li>
+                    <ul class="nav navbar-nav">
+                        <li><a data-scroll href = '/Doctor'>Hello, Dr. {{user.first_name}}</a></li>
+                        <li><a data-scroll href = '/Doctor/TreatPatient'>Treat {{Patient_Name}}</a></li>
+                        <li><a data-scroll class = 'active' href = '/Doctor/ViewHistory'>{{Patient_Name}}'s Medical History</a></li>
                         <li><a data-scroll href = '/account/logout'>Logout</a></li>
+                        <li><a data-scroll href="#about">About us</a></li>
                     
                      </ul>
                   </div>

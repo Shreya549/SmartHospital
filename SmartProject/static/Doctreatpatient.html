@@ -71,7 +71,8 @@
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
                         <li><a data-scroll href = '/Doctor'>Hello, Dr. {{user.first_name}}</a></li>
-                        <li><a data-scroll class = 'active' href = '/Doctor/FindPatients'>Treat Patients</a></li>
+                        <li><a data-scroll class = 'active' href = '/Doctor/FindPatients'>Treat {{Patient_Name}}</a></li>
+                        <li><a data-scroll href = '/Doctor/ViewHistory'>{{Patient_Name}}'s Medical History</a></li>
                         <li><a data-scroll href = '/account/logout'>Logout</a></li>
                         <li><a data-scroll href="#about">About us</a></li>
                     
@@ -113,7 +114,7 @@
                           <tr>
                           
                           
-                            <th scope="row">{{name}}</th>
+                            <th scope="row">{{Patient_Name}}</th>
                             <tD>
                               {% for i in problem %}
                               {{i}},

@@ -43,6 +43,8 @@ def FindPatients(request):
 @login_required
 def TreatPatient(request):
     problem = Appointment.objects.filter(username = username, treated = False, doctor_username = current_doctor ).values('problem')
+    pat_name = (User.objects.filter(username = username).values("first_name"))
+    patient_name = pat_name[0]['first_name']
     probs = []
     for i in problem:
         probs.append(i['problem'])
@@ -58,5 +60,50 @@ def TreatPatient(request):
             i.save()
 
         return redirect('/Doctor/FindPatients')
-    return render(request, 'Doctreatpatient.html', {'name': username, 'problem': probs})
+    return render(request, 'Doctreatpatient.html', {'name': username, 'problem': probs, 'Patient_Name' : patient_name})
+
+def ViewHistory(request):
+
+    try:
+        pat_name = (User.objects.filter(username = username).values("first_name"))
+        patient_name = pat_name[0]['first_name']
+        doctor = Appointment.objects.filter(username = username, treated = True).values("doctor_username")
+        problem = Appointment.objects.filter(username = username, treated = True).values("problem")
+        remark = Appointment.objects.filter(username = username, treated = True).values("remark")
+        medicines = Appointment.objects.filter(username = username, treated = True).values("medicines")
+        date_booked = Appointment.objects.filter(username = username, treated = True).values("date_booked")
+        date_treated = Appointment.objects.filter(username = username, treated = True).values("date_treated")
+
+        comp_report = []
+        doc = []
+        prob = []
+        rem = []
+        med = []
+        entry = ()
+        book = []
+        treat = []
+
+        for i in doctor:
+            doc.append(i["doctor_username"])
+        for i in problem:
+            prob.append(i["problem"])
+        for i in remark:
+            rem.append(i["remark"])
+        for i in medicines:
+            med.append(i["medicines"])
+        for i in date_booked:
+            book.append(i["date_booked"])
+        for i in date_treated:
+            treat.append(i["date_treated"])
+        
+        num = len(prob)
+
+        for i in range (len(doc)-1, -1, -1):
+            entry = (doc[i], prob[i], book[i], rem[i], med[i], treat[i])
+            comp_report.append(entry)
+        return render(request, 'DocViewHistory.html', {"prev_reports" : comp_report, 'number' : num, 'Patient_Name' : patient_name})
+        
+    except ObjectDoesNotExist:
+        messages.info(request, "You do not have any previous reports")
+        return render(request, "DocViewHistory.html")
     
